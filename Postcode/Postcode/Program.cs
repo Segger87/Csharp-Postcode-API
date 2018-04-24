@@ -17,9 +17,17 @@ namespace Postcode
             var apiCall = new PostCodeApiCalls();
             var returnPostcodeResults = apiCall.GetPostCodeDetails(postcode);
 
-            Console.WriteLine(returnPostcodeResults);
+            if (returnPostcodeResults == null)
+            {
+                Console.WriteLine("Sorry that is not a valid postcode");
+                Console.ReadLine();
+            }
+            else
+            {
+                Console.WriteLine(returnPostcodeResults);
+                Console.ReadLine();
+            }
 
-            Console.ReadLine();
         }
     }
 }
